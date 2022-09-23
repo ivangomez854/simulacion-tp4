@@ -52,7 +52,7 @@ namespace Simulacion_TP4.Entidades.Montecarlo
             T3 = t3;
             T4 = t4;
             T5 = t5;
-            TiempoTotal = T3 != null && T5 != null ? this.CalcularTiempoTotal() : 0;
+            TiempoTotal = T3 != null && T5 != null ? Math.Round(this.CalcularTiempoTotal(), 2) : 0;
             CaminoCritico = T3 != null && T5 != null ? this.CalcularCaminoCritico() : "";
             PromedioAcumuladoTiempoTotal = CalcularPromedioAcumuladoTiempoTotal();
         }

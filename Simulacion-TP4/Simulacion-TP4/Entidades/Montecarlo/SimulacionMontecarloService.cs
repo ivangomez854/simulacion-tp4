@@ -72,8 +72,8 @@ namespace Simulacion_TP4.Montecarlo
             // Creo la nueva actividad con su respectivo numero de orden
             var actividad = new ActividadEnsamble(orden, tarea1, tarea2, tarea3, tarea4, tarea5);
             // Calculo los datos sumarizados del conjunto de actividades
-            actividad.AcumuladoTiempoTotal = EstadoActual.AcumuladoTiempoTotal + actividad.TiempoTotal;
-            actividad.PromedioAcumuladoTiempoTotal = actividad.AcumuladoTiempoTotal / orden;
+            actividad.AcumuladoTiempoTotal = Math.Round(EstadoActual.AcumuladoTiempoTotal + actividad.TiempoTotal, 2);
+            actividad.PromedioAcumuladoTiempoTotal = Math.Round(actividad.AcumuladoTiempoTotal / orden, 2);
 
             TiempoMaximo = actividad.TiempoTotal > TiempoMaximo ? actividad.TiempoTotal : TiempoMaximo;
             TiempoMinimo = actividad.TiempoTotal < TiempoMinimo ? actividad.TiempoTotal : TiempoMinimo;

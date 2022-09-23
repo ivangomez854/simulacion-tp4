@@ -81,7 +81,12 @@ namespace Simulacion_TP4.Controlador
 
         public double ObtenerProbabilidadAntes45Dias()
         {
-            return listadoSimulacion.Count > 0 ? montecarloService.CantidadAntes45Dias / listadoSimulacion.Count : 0;
+            return listadoSimulacion.Count > 0 ? Math.Round(montecarloService.CantidadAntes45Dias / listadoSimulacion.Count, 4) : 0;
+        }
+
+        public double ObtenerPromedioEnsamble()
+        {
+            return listadoSimulacion.Count > 0 ? Math.Round(montecarloService.TiempoPromedioActividades, 2) : 0;
         }
 
     }
