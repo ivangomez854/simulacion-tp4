@@ -52,10 +52,10 @@ namespace Simulacion_TP4.Montecarlo
                 var orden = EstadoActual.Orden + 1;
                 // Obtengo los tiempos de cada tarea
                 var tiempo1 = RndT1.ObtenerSiguiente();
-                var tiempo2 = RndT1.ObtenerSiguiente();
-                var tiempo3 = RndT1.ObtenerSiguiente();
-                var tiempo4 = RndT1.ObtenerSiguiente();
-                var tiempo5 = RndT1.ObtenerSiguiente();
+                var tiempo2 = RndT2.ObtenerSiguiente();
+                var tiempo3 = RndT3.ObtenerSiguiente();
+                var tiempo4 = RndT4.ObtenerSiguiente();
+                var tiempo5 = RndT5.ObtenerSiguiente();
 
                 // Creo cada tarea con su precedente
                 var tarea1 = new Tarea(tiempo1, null);

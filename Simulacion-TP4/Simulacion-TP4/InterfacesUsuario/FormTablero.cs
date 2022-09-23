@@ -58,10 +58,10 @@ namespace Simulacion_TP4.InterfacesUsuario
         private static readonly int DEFAULT_B_T1 = 30;
         private static readonly int DEFAULT_A_T2 = 30;
         private static readonly int DEFAULT_B_T2 = 50;
-        private static readonly int DEFAULT_MEDIA_T3 = 30;
+        private static readonly double DEFAULT_MEDIA_T3 = 30d;
         private static readonly int DEFAULT_A_T4 = 10;
         private static readonly int DEFAULT_B_T4 = 20;
-        private static readonly int DEFAULT_MEDIA_T5 = 5;
+        private static readonly double DEFAULT_MEDIA_T5 = 5d;
 
 
         private SimulacionMontecarloController controlador;
@@ -214,9 +214,9 @@ namespace Simulacion_TP4.InterfacesUsuario
 
             var vA1 = new GeneradorVAUniforme(generador, DEFAULT_A_T1, DEFAULT_B_T1);
             var vA2 = new GeneradorVAUniforme(generador, DEFAULT_A_T2, DEFAULT_B_T2);
-            var vA3 = new GeneradorVAExponencialNegativa(generador, 1/DEFAULT_MEDIA_T3);
+            var vA3 = new GeneradorVAExponencialNegativa(generador, 1d/DEFAULT_MEDIA_T3);
             var vA4 = new GeneradorVAUniforme(generador, DEFAULT_A_T4, DEFAULT_B_T4);
-            var vA5 = new GeneradorVAExponencialNegativa(generador, 1/DEFAULT_MEDIA_T5);
+            var vA5 = new GeneradorVAExponencialNegativa(generador, 1d/DEFAULT_MEDIA_T5);
 
             this.lista = new BindingList<ActividadEnsamble>();
 
