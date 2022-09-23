@@ -112,7 +112,7 @@ namespace Simulacion_TP4.InterfacesUsuario
         private void inicializarGrillaSimulacion()
         {
             // Cree un DataGridView no vinculado declarando un recuento de columnas.
-            dgvSimulacion.ColumnCount = 15;
+            dgvSimulacion.ColumnCount = 20;
             dgvSimulacion.ColumnHeadersVisible = true;
             dgvSimulacion.AutoGenerateColumns = false;
 
@@ -132,32 +132,40 @@ namespace Simulacion_TP4.InterfacesUsuario
             dgvSimulacion.Columns[1].DataPropertyName = "RndT1";
             dgvSimulacion.Columns[2].Name = "T1";
             dgvSimulacion.Columns[2].DataPropertyName = "TiempoT1";
-            dgvSimulacion.Columns[3].Name = "Rnd2";
-            dgvSimulacion.Columns[3].DataPropertyName = "RndT2";
-            dgvSimulacion.Columns[4].Name = "T2";
-            dgvSimulacion.Columns[4].DataPropertyName = "TiempoT2";
-            dgvSimulacion.Columns[5].Name = "Rnd3";
-            dgvSimulacion.Columns[5].DataPropertyName = "RndT3";
-            dgvSimulacion.Columns[6].Name = "T3";
-            dgvSimulacion.Columns[6].DataPropertyName = "TiempoT3";
-            dgvSimulacion.Columns[7].Name = "Rnd4";
-            dgvSimulacion.Columns[7].DataPropertyName = "RndT4";
-            dgvSimulacion.Columns[8].Name = "T4";
-            dgvSimulacion.Columns[8].DataPropertyName = "TiempoT4";
-            dgvSimulacion.Columns[9].Name = "Rnd5";
-            dgvSimulacion.Columns[9].DataPropertyName = "RndT5";
-            dgvSimulacion.Columns[10].Name = "T5";
-            dgvSimulacion.Columns[10].DataPropertyName = "TiempoT5";
-            dgvSimulacion.Columns[11].Name = "Tiempo total";
-            dgvSimulacion.Columns[11].DataPropertyName = "TiempoTotal";
-            dgvSimulacion.Columns[12].Name = "Acumulado";
-            dgvSimulacion.Columns[12].DataPropertyName = "AcumuladoTiempoTotal";
-            dgvSimulacion.Columns[13].Name = "Promedio";
-            dgvSimulacion.Columns[13].DataPropertyName = "PromedioAcumuladoTiempoTotal";
-            dgvSimulacion.Columns[14].Name = "Camino Critico";
-            dgvSimulacion.Columns[14].DataPropertyName = "CaminoCritico";
-            dgvSimulacion.Columns[14].Name = "Camino Critico";
-            dgvSimulacion.Columns[14].DataPropertyName = "CaminoCritico";
+            dgvSimulacion.Columns[3].Name = "Atraso T1";
+            dgvSimulacion.Columns[3].DataPropertyName = "TiempoAtrasoPosibleT1";
+            dgvSimulacion.Columns[4].Name = "Rnd2";
+            dgvSimulacion.Columns[4].DataPropertyName = "RndT2";
+            dgvSimulacion.Columns[5].Name = "T2";
+            dgvSimulacion.Columns[5].DataPropertyName = "TiempoT2";
+            dgvSimulacion.Columns[6].Name = "Atraso T2";
+            dgvSimulacion.Columns[6].DataPropertyName = "TiempoAtrasoPosibleT2";
+            dgvSimulacion.Columns[7].Name = "Rnd3";
+            dgvSimulacion.Columns[7].DataPropertyName = "RndT3";
+            dgvSimulacion.Columns[8].Name = "T3";
+            dgvSimulacion.Columns[8].DataPropertyName = "TiempoT3";
+            dgvSimulacion.Columns[9].Name = "Atraso T3";
+            dgvSimulacion.Columns[9].DataPropertyName = "TiempoAtrasoPosibleT3";
+            dgvSimulacion.Columns[10].Name = "Rnd4";
+            dgvSimulacion.Columns[10].DataPropertyName = "RndT4";
+            dgvSimulacion.Columns[11].Name = "T4";
+            dgvSimulacion.Columns[11].DataPropertyName = "TiempoT4";
+            dgvSimulacion.Columns[12].Name = "Atraso T4";
+            dgvSimulacion.Columns[12].DataPropertyName = "TiempoAtrasoPosibleT4";
+            dgvSimulacion.Columns[13].Name = "Rnd5";
+            dgvSimulacion.Columns[13].DataPropertyName = "RndT5";
+            dgvSimulacion.Columns[14].Name = "T5";
+            dgvSimulacion.Columns[14].DataPropertyName = "TiempoT5";
+            dgvSimulacion.Columns[15].Name = "Atraso T5";
+            dgvSimulacion.Columns[15].DataPropertyName = "TiempoAtrasoPosibleT5";
+            dgvSimulacion.Columns[16].Name = "Tiempo total";
+            dgvSimulacion.Columns[16].DataPropertyName = "TiempoTotal";
+            dgvSimulacion.Columns[17].Name = "Acumulado";
+            dgvSimulacion.Columns[17].DataPropertyName = "AcumuladoTiempoTotal";
+            dgvSimulacion.Columns[18].Name = "Promedio";
+            dgvSimulacion.Columns[18].DataPropertyName = "PromedioAcumuladoTiempoTotal";
+            dgvSimulacion.Columns[19].Name = "Camino Critico";
+            dgvSimulacion.Columns[19].DataPropertyName = "CaminoCritico";
 
             // Cambia el tamaño de la altura de los encabezados de columna.
             dgvSimulacion.AutoResizeColumnHeadersHeight();
