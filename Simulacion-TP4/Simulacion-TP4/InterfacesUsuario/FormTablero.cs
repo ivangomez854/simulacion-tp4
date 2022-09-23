@@ -225,6 +225,9 @@ namespace Simulacion_TP4.InterfacesUsuario
             this.controlador.generarSimulacion((double)this.txtCantidad.Value, this.progressBar);
 
             this.paginador = new Paginador(this.lista, 20);
+            Console.WriteLine("TIEMPO MAXIMO: " + controlador.ObtenerTiempoMaximo());
+            Console.WriteLine("TIEMPO MINIMO: " + controlador.ObtenerTiempoMinimo());
+            Console.WriteLine("PROBABILIDAD ANTES 45 DIAS: " + controlador.ObtenerProbabilidadAntes45Dias());
 
             this.dgvSimulacion.DataSource = this.paginador.ObtenerPrimerPagina();
             this.dgvSimulacion.FirstDisplayedScrollingRowIndex = this.dgvSimulacion.Rows.Count - 1;

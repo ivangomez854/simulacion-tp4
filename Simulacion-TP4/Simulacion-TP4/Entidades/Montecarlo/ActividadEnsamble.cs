@@ -24,11 +24,11 @@ namespace Simulacion_TP4.Entidades.Montecarlo
         public double TiempoT3 { get { return Math.Round(T3.DuracionMinima, 2); } }
         public double TiempoT4 { get { return Math.Round(T4.DuracionMinima, 2); } }
         public double TiempoT5 { get { return Math.Round(T5.DuracionMinima, 2); } }
-        public double RndT1 { get { return Math.Round(T1.VariableAleatoria.Rnd1, 2); } }
-        public double RndT2 { get { return Math.Round(T2.VariableAleatoria.Rnd1, 2); } }
-        public double RndT3 { get { return Math.Round(T3.VariableAleatoria.Rnd1, 2); } }
-        public double RndT4 { get { return Math.Round(T4.VariableAleatoria.Rnd1, 2); } }
-        public double RndT5 { get { return Math.Round(T5.VariableAleatoria.Rnd1, 2); } }
+        public double RndT1 { get { return Math.Round(T1.VariableAleatoria.Rnd1, 4); } }
+        public double RndT2 { get { return Math.Round(T2.VariableAleatoria.Rnd1, 4); } }
+        public double RndT3 { get { return Math.Round(T3.VariableAleatoria.Rnd1, 4); } }
+        public double RndT4 { get { return Math.Round(T4.VariableAleatoria.Rnd1, 4); } }
+        public double RndT5 { get { return Math.Round(T5.VariableAleatoria.Rnd1, 4); } }
  
         public double TiempoTotal { get; }
 

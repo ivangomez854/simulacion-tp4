@@ -26,6 +26,9 @@ namespace Simulacion_TP4.Montecarlo
                 return EstadoActual.Orden > 0 ? EstadoActual.PromedioAcumuladoTiempoTotal : 0;
             } }
 
+        public double CantidadAntes45Dias { get; set; }
+
+
         private ActividadEnsamble EstadoActual { get; set; }
 
 
@@ -71,6 +74,8 @@ namespace Simulacion_TP4.Montecarlo
 
                 TiempoMaximo = actividad.TiempoTotal > TiempoMaximo ? actividad.TiempoTotal : TiempoMaximo;
                 TiempoMinimo = actividad.TiempoTotal < TiempoMinimo ? actividad.TiempoTotal : TiempoMinimo;
+                CantidadAntes45Dias += actividad.TiempoTotal <= 45 ? 1 : 0;
+
                 // Actualizo el vector de estado actual y retorno
                 this.EstadoActual = actividad;
             return EstadoActual;

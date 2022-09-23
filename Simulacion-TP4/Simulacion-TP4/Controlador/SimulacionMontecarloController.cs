@@ -69,5 +69,20 @@ namespace Simulacion_TP4.Controlador
             return cantidadSegmentosBusqueda;
         }
 
+        public double ObtenerTiempoMinimo()
+        {
+            return listadoSimulacion.Count > 0 ? montecarloService.TiempoMinimo : 0;
+        }        
+        
+        public double ObtenerTiempoMaximo()
+        {
+            return listadoSimulacion.Count > 0 ? montecarloService.TiempoMaximo : 0;
+        }
+
+        public double ObtenerProbabilidadAntes45Dias()
+        {
+            return listadoSimulacion.Count > 0 ? montecarloService.CantidadAntes45Dias / listadoSimulacion.Count : 0;
+        }
+
     }
 }
