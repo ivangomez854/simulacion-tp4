@@ -68,7 +68,16 @@ namespace Simulacion_TP4.Montecarlo
             var tarea2 = new Tarea(tiempo2, null);
             var tarea3 = new Tarea(tiempo3, null);
             var tarea4 = new Tarea(tiempo4, tarea1);
-            var tarea5 = new Tarea(tiempo5, tarea2);
+
+            Tarea tarea5;
+            if (tiempo4.ValorAleatorio > tiempo2.ValorAleatorio)
+            {
+                tarea5 = new Tarea(tiempo5, tarea4);
+            } else
+            {
+                tarea5 = new Tarea(tiempo5, tarea4);
+            }
+
             // Creo la nueva actividad con su respectivo numero de orden
             var actividad = new ActividadEnsamble(orden, tarea1, tarea2, tarea3, tarea4, tarea5);
             // Calculo los datos sumarizados del conjunto de actividades
