@@ -37,6 +37,11 @@ namespace Simulacion_TP4.Entidades.Montecarlo
         public double RndT4 { get { return Math.Round(T4.VariableAleatoria.Rnd1, 4); } }
         public double RndT5 { get { return Math.Round(T5.VariableAleatoria.Rnd1, 4); } }
  
+        public double TiempoAtrasoPosibleT1 { get; set; }
+        public double TiempoAtrasoPosibleT2 { get; set; }
+        public double TiempoAtrasoPosibleT3 { get; set; }
+        public double TiempoAtrasoPosibleT4 { get; set; }
+        public double TiempoAtrasoPosibleT5 { get; set; }
         public double TiempoTotal { get; }
 
         public double AcumuladoTiempoTotal { get; set; }
@@ -55,6 +60,15 @@ namespace Simulacion_TP4.Entidades.Montecarlo
             TiempoTotal = T3 != null && T5 != null ? this.CalcularTiempoTotal() : 0;
             CaminoCritico = T3 != null && T5 != null ? this.CalcularCaminoCritico() : "";
             PromedioAcumuladoTiempoTotal = CalcularPromedioAcumuladoTiempoTotal();
+
+            if (T3 != null && T5 != null)
+            {
+                TiempoAtrasoPosibleT1 = (double)Math.Round(TiempoTotal - T5.DuracionMinima - T4.DuracionMinima - T1.DuracionMinima, 2);
+                TiempoAtrasoPosibleT2 = (double)Math.Round(TiempoTotal - T5.DuracionMinima - T2.DuracionMinima, 2);
+                TiempoAtrasoPosibleT3 = (double)Math.Round(TiempoTotal - T3.DuracionMinima, 2);
+                TiempoAtrasoPosibleT4 = (double)Math.Round(TiempoTotal - T5.DuracionMinima - T4.DuracionMinima, 2);
+                TiempoAtrasoPosibleT5 = (double)Math.Round(TiempoTotal - T5.DuracionMinima, 2);
+            }
         }
 
         private double CalcularTiempoTotal()
