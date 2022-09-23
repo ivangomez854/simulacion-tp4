@@ -17,7 +17,7 @@ namespace Simulacion_TP4.Controlador
     internal class SimulacionMontecarloController
     {
         BindingList<ActividadEnsamble> listadoSimulacion;
-        private SimulacionMontecarloService montecarloService;
+        public SimulacionMontecarloService montecarloService;
 
         public SimulacionMontecarloController(BindingList<ActividadEnsamble> lista, IGeneradorVA vA1, IGeneradorVA vA2, IGeneradorVA vA3, IGeneradorVA vA4, IGeneradorVA vA5)
         {

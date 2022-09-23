@@ -51,24 +51,24 @@
             this.btnReiniciar = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.progressBar = new System.Windows.Forms.ToolStripProgressBar();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnBuscarPagina = new System.Windows.Forms.Button();
             this.txtBuscarPagina = new System.Windows.Forms.NumericUpDown();
             this.btnPaginaAnterior = new System.Windows.Forms.Button();
             this.btnPaginaSiguiente = new System.Windows.Forms.Button();
             this.btnUltimaPagina = new System.Windows.Forms.Button();
             this.btnPrimeraPagina = new System.Windows.Forms.Button();
-            this.pnlFrecuenciaEsperada = new System.Windows.Forms.Panel();
-            this.pnlFrecuenciaObservada = new System.Windows.Forms.Panel();
-            this.lblFrecuenciaObservada = new System.Windows.Forms.Label();
-            this.lblFrecuenciaEsperada = new System.Windows.Forms.Label();
-            this.gbIntervalos = new System.Windows.Forms.GroupBox();
-            this.lblCantidadIntervalos = new System.Windows.Forms.Label();
-            this.btnGenerarIntervalos = new System.Windows.Forms.Button();
-            this.txtCantidadIntervalos = new System.Windows.Forms.NumericUpDown();
-            this.btnAutocalcular = new System.Windows.Forms.Button();
             this.dgvSimulacion = new System.Windows.Forms.DataGridView();
             this.dgvActividades = new System.Windows.Forms.DataGridView();
+            this.lblCaminoCritico1 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblProbabilidadCaminoCritico1 = new System.Windows.Forms.Label();
+            this.inputProbabilidadCaminoCritico1 = new System.Windows.Forms.NumericUpDown();
+            this.inputProbabilidadCaminoCritico2 = new System.Windows.Forms.NumericUpDown();
+            this.lblProbabilidadCaminoCritico2 = new System.Windows.Forms.Label();
+            this.lblCaminoCritico2 = new System.Windows.Forms.Label();
+            this.inputProbabilidadCaminoCritico3 = new System.Windows.Forms.NumericUpDown();
+            this.lblProbabilidadCaminoCritico3 = new System.Windows.Forms.Label();
+            this.lblCaminoCritico3 = new System.Windows.Forms.Label();
             this.gbRandom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtSemilla)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtModulo)).BeginInit();
@@ -79,10 +79,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidad)).BeginInit();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtBuscarPagina)).BeginInit();
-            this.gbIntervalos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCantidadIntervalos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSimulacion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvActividades)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.inputProbabilidadCaminoCritico1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inputProbabilidadCaminoCritico2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inputProbabilidadCaminoCritico3)).BeginInit();
             this.SuspendLayout();
             // 
             // gbRandom
@@ -308,13 +310,6 @@
             this.progressBar.Name = "progressBar";
             this.progressBar.Size = new System.Drawing.Size(100, 16);
             // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(251, 523);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(10, 11);
-            this.flowLayoutPanel1.TabIndex = 25;
-            // 
             // btnBuscarPagina
             // 
             this.btnBuscarPagina.Location = new System.Drawing.Point(1314, 360);
@@ -377,108 +372,6 @@
             this.btnPrimeraPagina.UseVisualStyleBackColor = true;
             this.btnPrimeraPagina.Click += new System.EventHandler(this.btnPrimeraPagina_Click);
             // 
-            // pnlFrecuenciaEsperada
-            // 
-            this.pnlFrecuenciaEsperada.BackColor = System.Drawing.Color.Maroon;
-            this.pnlFrecuenciaEsperada.Location = new System.Drawing.Point(397, 387);
-            this.pnlFrecuenciaEsperada.Name = "pnlFrecuenciaEsperada";
-            this.pnlFrecuenciaEsperada.Size = new System.Drawing.Size(24, 23);
-            this.pnlFrecuenciaEsperada.TabIndex = 31;
-            this.pnlFrecuenciaEsperada.Visible = false;
-            // 
-            // pnlFrecuenciaObservada
-            // 
-            this.pnlFrecuenciaObservada.BackColor = System.Drawing.Color.Green;
-            this.pnlFrecuenciaObservada.Location = new System.Drawing.Point(397, 354);
-            this.pnlFrecuenciaObservada.Name = "pnlFrecuenciaObservada";
-            this.pnlFrecuenciaObservada.Size = new System.Drawing.Size(24, 23);
-            this.pnlFrecuenciaObservada.TabIndex = 30;
-            this.pnlFrecuenciaObservada.Visible = false;
-            // 
-            // lblFrecuenciaObservada
-            // 
-            this.lblFrecuenciaObservada.AutoSize = true;
-            this.lblFrecuenciaObservada.Location = new System.Drawing.Point(276, 360);
-            this.lblFrecuenciaObservada.Name = "lblFrecuenciaObservada";
-            this.lblFrecuenciaObservada.Size = new System.Drawing.Size(115, 13);
-            this.lblFrecuenciaObservada.TabIndex = 29;
-            this.lblFrecuenciaObservada.Text = "Frecuencia Observada";
-            this.lblFrecuenciaObservada.Visible = false;
-            // 
-            // lblFrecuenciaEsperada
-            // 
-            this.lblFrecuenciaEsperada.AutoSize = true;
-            this.lblFrecuenciaEsperada.Location = new System.Drawing.Point(276, 392);
-            this.lblFrecuenciaEsperada.Name = "lblFrecuenciaEsperada";
-            this.lblFrecuenciaEsperada.Size = new System.Drawing.Size(108, 13);
-            this.lblFrecuenciaEsperada.TabIndex = 28;
-            this.lblFrecuenciaEsperada.Text = "Frecuencia Esperada";
-            this.lblFrecuenciaEsperada.Visible = false;
-            // 
-            // gbIntervalos
-            // 
-            this.gbIntervalos.Controls.Add(this.lblCantidadIntervalos);
-            this.gbIntervalos.Controls.Add(this.btnGenerarIntervalos);
-            this.gbIntervalos.Controls.Add(this.txtCantidadIntervalos);
-            this.gbIntervalos.Controls.Add(this.btnAutocalcular);
-            this.gbIntervalos.Location = new System.Drawing.Point(180, 459);
-            this.gbIntervalos.Name = "gbIntervalos";
-            this.gbIntervalos.Size = new System.Drawing.Size(294, 75);
-            this.gbIntervalos.TabIndex = 26;
-            this.gbIntervalos.TabStop = false;
-            this.gbIntervalos.Text = "Intervalos";
-            this.gbIntervalos.Visible = false;
-            // 
-            // lblCantidadIntervalos
-            // 
-            this.lblCantidadIntervalos.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.lblCantidadIntervalos.AutoSize = true;
-            this.lblCantidadIntervalos.Location = new System.Drawing.Point(6, 25);
-            this.lblCantidadIntervalos.Name = "lblCantidadIntervalos";
-            this.lblCantidadIntervalos.Size = new System.Drawing.Size(98, 13);
-            this.lblCantidadIntervalos.TabIndex = 22;
-            this.lblCantidadIntervalos.Text = "Cantidad Intervalos";
-            // 
-            // btnGenerarIntervalos
-            // 
-            this.btnGenerarIntervalos.Location = new System.Drawing.Point(214, 25);
-            this.btnGenerarIntervalos.Name = "btnGenerarIntervalos";
-            this.btnGenerarIntervalos.Size = new System.Drawing.Size(75, 36);
-            this.btnGenerarIntervalos.TabIndex = 25;
-            this.btnGenerarIntervalos.Text = "Generar";
-            this.btnGenerarIntervalos.UseVisualStyleBackColor = true;
-            // 
-            // txtCantidadIntervalos
-            // 
-            this.txtCantidadIntervalos.Location = new System.Drawing.Point(9, 41);
-            this.txtCantidadIntervalos.Maximum = new decimal(new int[] {
-            999,
-            0,
-            0,
-            0});
-            this.txtCantidadIntervalos.Minimum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.txtCantidadIntervalos.Name = "txtCantidadIntervalos";
-            this.txtCantidadIntervalos.Size = new System.Drawing.Size(118, 20);
-            this.txtCantidadIntervalos.TabIndex = 23;
-            this.txtCantidadIntervalos.Value = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            // 
-            // btnAutocalcular
-            // 
-            this.btnAutocalcular.Location = new System.Drawing.Point(133, 25);
-            this.btnAutocalcular.Name = "btnAutocalcular";
-            this.btnAutocalcular.Size = new System.Drawing.Size(75, 36);
-            this.btnAutocalcular.TabIndex = 24;
-            this.btnAutocalcular.Text = "Autocalcular";
-            this.btnAutocalcular.UseVisualStyleBackColor = true;
-            // 
             // dgvSimulacion
             // 
             this.dgvSimulacion.AllowUserToAddRows = false;
@@ -507,21 +400,115 @@
             this.dgvActividades.Size = new System.Drawing.Size(375, 141);
             this.dgvActividades.TabIndex = 38;
             // 
+            // lblCaminoCritico1
+            // 
+            this.lblCaminoCritico1.AutoSize = true;
+            this.lblCaminoCritico1.Location = new System.Drawing.Point(6, 31);
+            this.lblCaminoCritico1.Name = "lblCaminoCritico1";
+            this.lblCaminoCritico1.Size = new System.Drawing.Size(126, 13);
+            this.lblCaminoCritico1.TabIndex = 39;
+            this.lblCaminoCritico1.Text = "Camino 1: A1 -> A4 -> A5";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.inputProbabilidadCaminoCritico3);
+            this.groupBox1.Controls.Add(this.lblProbabilidadCaminoCritico3);
+            this.groupBox1.Controls.Add(this.lblCaminoCritico3);
+            this.groupBox1.Controls.Add(this.inputProbabilidadCaminoCritico2);
+            this.groupBox1.Controls.Add(this.lblProbabilidadCaminoCritico2);
+            this.groupBox1.Controls.Add(this.lblCaminoCritico2);
+            this.groupBox1.Controls.Add(this.inputProbabilidadCaminoCritico1);
+            this.groupBox1.Controls.Add(this.lblProbabilidadCaminoCritico1);
+            this.groupBox1.Controls.Add(this.lblCaminoCritico1);
+            this.groupBox1.Location = new System.Drawing.Point(10, 363);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(214, 226);
+            this.groupBox1.TabIndex = 40;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Probabilidades de Criticidad de Caminos";
+            // 
+            // lblProbabilidadCaminoCritico1
+            // 
+            this.lblProbabilidadCaminoCritico1.AutoSize = true;
+            this.lblProbabilidadCaminoCritico1.Location = new System.Drawing.Point(6, 55);
+            this.lblProbabilidadCaminoCritico1.Name = "lblProbabilidadCaminoCritico1";
+            this.lblProbabilidadCaminoCritico1.Size = new System.Drawing.Size(68, 13);
+            this.lblProbabilidadCaminoCritico1.TabIndex = 40;
+            this.lblProbabilidadCaminoCritico1.Text = "Probabilidad:";
+            // 
+            // inputProbabilidadCaminoCritico1
+            // 
+            this.inputProbabilidadCaminoCritico1.DecimalPlaces = 2;
+            this.inputProbabilidadCaminoCritico1.Enabled = false;
+            this.inputProbabilidadCaminoCritico1.Location = new System.Drawing.Point(80, 53);
+            this.inputProbabilidadCaminoCritico1.Name = "inputProbabilidadCaminoCritico1";
+            this.inputProbabilidadCaminoCritico1.Size = new System.Drawing.Size(120, 20);
+            this.inputProbabilidadCaminoCritico1.TabIndex = 41;
+            // 
+            // inputProbabilidadCaminoCritico2
+            // 
+            this.inputProbabilidadCaminoCritico2.DecimalPlaces = 2;
+            this.inputProbabilidadCaminoCritico2.Enabled = false;
+            this.inputProbabilidadCaminoCritico2.Location = new System.Drawing.Point(80, 112);
+            this.inputProbabilidadCaminoCritico2.Name = "inputProbabilidadCaminoCritico2";
+            this.inputProbabilidadCaminoCritico2.Size = new System.Drawing.Size(120, 20);
+            this.inputProbabilidadCaminoCritico2.TabIndex = 44;
+            // 
+            // lblProbabilidadCaminoCritico2
+            // 
+            this.lblProbabilidadCaminoCritico2.AutoSize = true;
+            this.lblProbabilidadCaminoCritico2.Location = new System.Drawing.Point(6, 114);
+            this.lblProbabilidadCaminoCritico2.Name = "lblProbabilidadCaminoCritico2";
+            this.lblProbabilidadCaminoCritico2.Size = new System.Drawing.Size(68, 13);
+            this.lblProbabilidadCaminoCritico2.TabIndex = 43;
+            this.lblProbabilidadCaminoCritico2.Text = "Probabilidad:";
+            // 
+            // lblCaminoCritico2
+            // 
+            this.lblCaminoCritico2.AutoSize = true;
+            this.lblCaminoCritico2.Location = new System.Drawing.Point(6, 90);
+            this.lblCaminoCritico2.Name = "lblCaminoCritico2";
+            this.lblCaminoCritico2.Size = new System.Drawing.Size(98, 13);
+            this.lblCaminoCritico2.TabIndex = 42;
+            this.lblCaminoCritico2.Text = "Camino 2: A2 -> A5";
+            // 
+            // inputProbabilidadCaminoCritico3
+            // 
+            this.inputProbabilidadCaminoCritico3.DecimalPlaces = 2;
+            this.inputProbabilidadCaminoCritico3.Enabled = false;
+            this.inputProbabilidadCaminoCritico3.Location = new System.Drawing.Point(80, 168);
+            this.inputProbabilidadCaminoCritico3.Name = "inputProbabilidadCaminoCritico3";
+            this.inputProbabilidadCaminoCritico3.Size = new System.Drawing.Size(120, 20);
+            this.inputProbabilidadCaminoCritico3.TabIndex = 47;
+            // 
+            // lblProbabilidadCaminoCritico3
+            // 
+            this.lblProbabilidadCaminoCritico3.AutoSize = true;
+            this.lblProbabilidadCaminoCritico3.Location = new System.Drawing.Point(6, 170);
+            this.lblProbabilidadCaminoCritico3.Name = "lblProbabilidadCaminoCritico3";
+            this.lblProbabilidadCaminoCritico3.Size = new System.Drawing.Size(68, 13);
+            this.lblProbabilidadCaminoCritico3.TabIndex = 46;
+            this.lblProbabilidadCaminoCritico3.Text = "Probabilidad:";
+            // 
+            // lblCaminoCritico3
+            // 
+            this.lblCaminoCritico3.AutoSize = true;
+            this.lblCaminoCritico3.Location = new System.Drawing.Point(6, 146);
+            this.lblCaminoCritico3.Name = "lblCaminoCritico3";
+            this.lblCaminoCritico3.Size = new System.Drawing.Size(70, 13);
+            this.lblCaminoCritico3.TabIndex = 45;
+            this.lblCaminoCritico3.Text = "Camino 3: A3";
+            // 
             // FormTablero
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1379, 685);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvActividades);
-            this.Controls.Add(this.pnlFrecuenciaEsperada);
             this.Controls.Add(this.btnBuscarPagina);
-            this.Controls.Add(this.pnlFrecuenciaObservada);
-            this.Controls.Add(this.lblFrecuenciaObservada);
             this.Controls.Add(this.txtBuscarPagina);
-            this.Controls.Add(this.lblFrecuenciaEsperada);
-            this.Controls.Add(this.gbIntervalos);
             this.Controls.Add(this.btnPaginaAnterior);
-            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.btnPaginaSiguiente);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.btnUltimaPagina);
@@ -534,7 +521,7 @@
             this.Controls.Add(this.gbRandom);
             this.Controls.Add(this.dgvSimulacion);
             this.MainMenuStrip = this.menuStrip1;
-            this.MinimumSize = new System.Drawing.Size(1395, 724);
+            this.MinimumSize = new System.Drawing.Size(1364, 724);
             this.Name = "FormTablero";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormTablero";
@@ -551,11 +538,13 @@
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtBuscarPagina)).EndInit();
-            this.gbIntervalos.ResumeLayout(false);
-            this.gbIntervalos.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCantidadIntervalos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSimulacion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvActividades)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.inputProbabilidadCaminoCritico1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inputProbabilidadCaminoCritico2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inputProbabilidadCaminoCritico3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -583,18 +572,8 @@
         private System.Windows.Forms.Button btnGenerar;
         private System.Windows.Forms.Button btnReiniciar;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.ToolStripProgressBar progressBar;
         private System.Windows.Forms.DataGridView dgvSimulacion;
-        private System.Windows.Forms.Button btnAutocalcular;
-        private System.Windows.Forms.NumericUpDown txtCantidadIntervalos;
-        private System.Windows.Forms.Label lblCantidadIntervalos;
-        private System.Windows.Forms.GroupBox gbIntervalos;
-        private System.Windows.Forms.Button btnGenerarIntervalos;
-        private System.Windows.Forms.Panel pnlFrecuenciaEsperada;
-        private System.Windows.Forms.Panel pnlFrecuenciaObservada;
-        private System.Windows.Forms.Label lblFrecuenciaObservada;
-        private System.Windows.Forms.Label lblFrecuenciaEsperada;
         private System.Windows.Forms.Button btnBuscarPagina;
         private System.Windows.Forms.NumericUpDown txtBuscarPagina;
         private System.Windows.Forms.Button btnPaginaAnterior;
@@ -602,5 +581,15 @@
         private System.Windows.Forms.Button btnUltimaPagina;
         private System.Windows.Forms.Button btnPrimeraPagina;
         private System.Windows.Forms.DataGridView dgvActividades;
+        private System.Windows.Forms.Label lblCaminoCritico1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.NumericUpDown inputProbabilidadCaminoCritico3;
+        private System.Windows.Forms.Label lblProbabilidadCaminoCritico3;
+        private System.Windows.Forms.Label lblCaminoCritico3;
+        private System.Windows.Forms.NumericUpDown inputProbabilidadCaminoCritico2;
+        private System.Windows.Forms.Label lblProbabilidadCaminoCritico2;
+        private System.Windows.Forms.Label lblCaminoCritico2;
+        private System.Windows.Forms.NumericUpDown inputProbabilidadCaminoCritico1;
+        private System.Windows.Forms.Label lblProbabilidadCaminoCritico1;
     }
 }

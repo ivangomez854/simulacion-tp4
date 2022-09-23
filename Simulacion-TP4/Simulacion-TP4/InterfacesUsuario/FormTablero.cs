@@ -154,6 +154,10 @@ namespace Simulacion_TP4.InterfacesUsuario
             dgvSimulacion.Columns[12].DataPropertyName = "AcumuladoTiempoTotal";
             dgvSimulacion.Columns[13].Name = "Promedio";
             dgvSimulacion.Columns[13].DataPropertyName = "PromedioAcumuladoTiempoTotal";
+            dgvSimulacion.Columns[14].Name = "Camino Critico";
+            dgvSimulacion.Columns[14].DataPropertyName = "CaminoCritico";
+            dgvSimulacion.Columns[14].Name = "Camino Critico";
+            dgvSimulacion.Columns[14].DataPropertyName = "CaminoCritico";
 
             // Cambia el tamaño de la altura de los encabezados de columna.
             dgvSimulacion.AutoResizeColumnHeadersHeight();
@@ -223,6 +227,10 @@ namespace Simulacion_TP4.InterfacesUsuario
             this.controlador = new SimulacionMontecarloController(this.lista, vA1, vA2, vA3, vA4, vA5);
             
             this.controlador.generarSimulacion((double)this.txtCantidad.Value, this.progressBar);
+
+            this.inputProbabilidadCaminoCritico1.Value = (decimal) this.controlador.montecarloService.EstadoActual.ProbabilidadCaminoCritico1;
+            this.inputProbabilidadCaminoCritico2.Value = (decimal) this.controlador.montecarloService.EstadoActual.ProbabilidadCaminoCritico2;
+            this.inputProbabilidadCaminoCritico3.Value = (decimal) this.controlador.montecarloService.EstadoActual.ProbabilidadCaminoCritico3;
 
             this.paginador = new Paginador(this.lista, 20);
 
