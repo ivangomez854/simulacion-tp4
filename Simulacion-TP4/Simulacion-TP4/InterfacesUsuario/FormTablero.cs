@@ -214,9 +214,9 @@ namespace Simulacion_TP4.InterfacesUsuario
 
             var vA1 = new GeneradorVAUniforme(generador, DEFAULT_A_T1, DEFAULT_B_T1);
             var vA2 = new GeneradorVAUniforme(generador, DEFAULT_A_T2, DEFAULT_B_T2);
-            var vA3 = new GeneradorVAExponencialNegativa(generador, DEFAULT_MEDIA_T3);
+            var vA3 = new GeneradorVAExponencialNegativa(generador, 1/DEFAULT_MEDIA_T3);
             var vA4 = new GeneradorVAUniforme(generador, DEFAULT_A_T4, DEFAULT_B_T4);
-            var vA5 = new GeneradorVAExponencialNegativa(generador, DEFAULT_MEDIA_T5);
+            var vA5 = new GeneradorVAExponencialNegativa(generador, 1/DEFAULT_MEDIA_T5);
 
             this.lista = new BindingList<ActividadEnsamble>();
 

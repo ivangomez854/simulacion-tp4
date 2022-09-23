@@ -20,6 +20,12 @@ namespace Simulacion_TP4.Montecarlo
         IGeneradorVA RndT4 { get; }
         IGeneradorVA RndT5 { get; }
 
+        public double TiempoMaximo { get; set; }
+        public double TiempoMinimo { get; set; }
+        public double TiempoPromedioActividades { get {
+                return EstadoActual.Orden > 0 ? EstadoActual.PromedioAcumuladoTiempoTotal : 0;
+            } }
+
         private ActividadEnsamble EstadoActual { get; set; }
 
 
@@ -35,6 +41,10 @@ namespace Simulacion_TP4.Montecarlo
             EstadoActual = new ActividadEnsamble(0, null, null, null, null, null);
             EstadoActual.AcumuladoTiempoTotal = 0;
             EstadoActual.PromedioAcumuladoTiempoTotal = 0;
+
+            //Inicializo propiedades de sumarizacion
+            TiempoMaximo = Double.MinValue;
+            TiempoMinimo = Double.MaxValue;
         }
 
         public ActividadEnsamble SimularSiguienteActividad()
@@ -58,6 +68,9 @@ namespace Simulacion_TP4.Montecarlo
                 // Calculo los datos sumarizados del conjunto de actividades
                 actividad.AcumuladoTiempoTotal = EstadoActual.AcumuladoTiempoTotal + actividad.TiempoTotal;
                 actividad.PromedioAcumuladoTiempoTotal = actividad.AcumuladoTiempoTotal / orden;
+
+                TiempoMaximo = actividad.TiempoTotal > TiempoMaximo ? actividad.TiempoTotal : TiempoMaximo;
+                TiempoMinimo = actividad.TiempoTotal < TiempoMinimo ? actividad.TiempoTotal : TiempoMinimo;
                 // Actualizo el vector de estado actual y retorno
                 this.EstadoActual = actividad;
             return EstadoActual;

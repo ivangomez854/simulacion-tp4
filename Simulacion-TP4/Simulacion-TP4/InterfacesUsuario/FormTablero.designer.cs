@@ -310,9 +310,9 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(428, 516);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(251, 523);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(10, 12);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(10, 11);
             this.flowLayoutPanel1.TabIndex = 25;
             // 
             // btnBuscarPagina
@@ -421,9 +421,9 @@
             this.gbIntervalos.Controls.Add(this.btnGenerarIntervalos);
             this.gbIntervalos.Controls.Add(this.txtCantidadIntervalos);
             this.gbIntervalos.Controls.Add(this.btnAutocalcular);
-            this.gbIntervalos.Location = new System.Drawing.Point(357, 452);
+            this.gbIntervalos.Location = new System.Drawing.Point(180, 459);
             this.gbIntervalos.Name = "gbIntervalos";
-            this.gbIntervalos.Size = new System.Drawing.Size(294, 76);
+            this.gbIntervalos.Size = new System.Drawing.Size(294, 75);
             this.gbIntervalos.TabIndex = 26;
             this.gbIntervalos.TabStop = false;
             this.gbIntervalos.Text = "Intervalos";
