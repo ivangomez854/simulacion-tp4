@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace Simulacion_TP4.Controlador
 {
@@ -25,7 +26,7 @@ namespace Simulacion_TP4.Controlador
             this.montecarloService = new SimulacionMontecarloService(vA1, vA2, vA3, vA4, vA5);
         }
 
-        public void generarSimulacion(double cantidad, ToolStripProgressBar progressBar)
+        public void generarSimulacion(double cantidad, ToolStripProgressBar progressBar, Chart chartPromedios)
         {
 
             int cantidadSegmentosBusqueda = this.CalcularSegmentosBusqueda(cantidad);
@@ -41,7 +42,9 @@ namespace Simulacion_TP4.Controlador
             {
                 for (var j = 1; j <= amplitudSegmentoBusqueda; j++)
                 {
-                    listadoSimulacion.Add(this.montecarloService.SimularSiguienteActividad());
+                    ActividadEnsamble actividad = this.montecarloService.SimularSiguienteActividad();
+                    chartPromedios.Series[0].Points.AddXY(actividad.Orden, actividad.PromedioAcumuladoTiempoTotal);
+                    listadoSimulacion.Add(actividad);
                 }
                 cantidadPendienteBuscar -= amplitudSegmentoBusqueda;
                 progressBar.PerformStep();
@@ -51,7 +54,9 @@ namespace Simulacion_TP4.Controlador
             {
                 for (var j = 1; j <= cantidadPendienteBuscar; j++)
                 {
-                    listadoSimulacion.Add(this.montecarloService.SimularSiguienteActividad());
+                    ActividadEnsamble actividad = this.montecarloService.SimularSiguienteActividad();
+                    chartPromedios.Series[0].Points.AddXY(actividad.Orden, actividad.PromedioAcumuladoTiempoTotal);
+                    listadoSimulacion.Add(actividad);
                 }
             }
             progressBar.Value = (int)cantidad;

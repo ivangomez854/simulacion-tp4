@@ -30,6 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTablero));
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.gbRandom = new System.Windows.Forms.GroupBox();
             this.txtSemilla = new System.Windows.Forms.NumericUpDown();
             this.txtModulo = new System.Windows.Forms.NumericUpDown();
@@ -61,14 +64,15 @@
             this.dgvActividades = new System.Windows.Forms.DataGridView();
             this.lblCaminoCritico1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblProbabilidadCaminoCritico1 = new System.Windows.Forms.Label();
-            this.inputProbabilidadCaminoCritico1 = new System.Windows.Forms.NumericUpDown();
-            this.inputProbabilidadCaminoCritico2 = new System.Windows.Forms.NumericUpDown();
-            this.lblProbabilidadCaminoCritico2 = new System.Windows.Forms.Label();
-            this.lblCaminoCritico2 = new System.Windows.Forms.Label();
             this.inputProbabilidadCaminoCritico3 = new System.Windows.Forms.NumericUpDown();
             this.lblProbabilidadCaminoCritico3 = new System.Windows.Forms.Label();
             this.lblCaminoCritico3 = new System.Windows.Forms.Label();
+            this.inputProbabilidadCaminoCritico2 = new System.Windows.Forms.NumericUpDown();
+            this.lblProbabilidadCaminoCritico2 = new System.Windows.Forms.Label();
+            this.lblCaminoCritico2 = new System.Windows.Forms.Label();
+            this.inputProbabilidadCaminoCritico1 = new System.Windows.Forms.NumericUpDown();
+            this.lblProbabilidadCaminoCritico1 = new System.Windows.Forms.Label();
+            this.chartEvolucionPromedio = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.gbRandom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtSemilla)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtModulo)).BeginInit();
@@ -82,9 +86,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvSimulacion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvActividades)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.inputProbabilidadCaminoCritico1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inputProbabilidadCaminoCritico2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inputProbabilidadCaminoCritico3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inputProbabilidadCaminoCritico2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inputProbabilidadCaminoCritico1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartEvolucionPromedio)).BeginInit();
             this.SuspendLayout();
             // 
             // gbRandom
@@ -427,23 +432,32 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Probabilidades de Criticidad de Caminos";
             // 
-            // lblProbabilidadCaminoCritico1
+            // inputProbabilidadCaminoCritico3
             // 
-            this.lblProbabilidadCaminoCritico1.AutoSize = true;
-            this.lblProbabilidadCaminoCritico1.Location = new System.Drawing.Point(6, 55);
-            this.lblProbabilidadCaminoCritico1.Name = "lblProbabilidadCaminoCritico1";
-            this.lblProbabilidadCaminoCritico1.Size = new System.Drawing.Size(68, 13);
-            this.lblProbabilidadCaminoCritico1.TabIndex = 40;
-            this.lblProbabilidadCaminoCritico1.Text = "Probabilidad:";
+            this.inputProbabilidadCaminoCritico3.DecimalPlaces = 2;
+            this.inputProbabilidadCaminoCritico3.Enabled = false;
+            this.inputProbabilidadCaminoCritico3.Location = new System.Drawing.Point(80, 168);
+            this.inputProbabilidadCaminoCritico3.Name = "inputProbabilidadCaminoCritico3";
+            this.inputProbabilidadCaminoCritico3.Size = new System.Drawing.Size(120, 20);
+            this.inputProbabilidadCaminoCritico3.TabIndex = 47;
             // 
-            // inputProbabilidadCaminoCritico1
+            // lblProbabilidadCaminoCritico3
             // 
-            this.inputProbabilidadCaminoCritico1.DecimalPlaces = 2;
-            this.inputProbabilidadCaminoCritico1.Enabled = false;
-            this.inputProbabilidadCaminoCritico1.Location = new System.Drawing.Point(80, 53);
-            this.inputProbabilidadCaminoCritico1.Name = "inputProbabilidadCaminoCritico1";
-            this.inputProbabilidadCaminoCritico1.Size = new System.Drawing.Size(120, 20);
-            this.inputProbabilidadCaminoCritico1.TabIndex = 41;
+            this.lblProbabilidadCaminoCritico3.AutoSize = true;
+            this.lblProbabilidadCaminoCritico3.Location = new System.Drawing.Point(6, 170);
+            this.lblProbabilidadCaminoCritico3.Name = "lblProbabilidadCaminoCritico3";
+            this.lblProbabilidadCaminoCritico3.Size = new System.Drawing.Size(68, 13);
+            this.lblProbabilidadCaminoCritico3.TabIndex = 46;
+            this.lblProbabilidadCaminoCritico3.Text = "Probabilidad:";
+            // 
+            // lblCaminoCritico3
+            // 
+            this.lblCaminoCritico3.AutoSize = true;
+            this.lblCaminoCritico3.Location = new System.Drawing.Point(6, 146);
+            this.lblCaminoCritico3.Name = "lblCaminoCritico3";
+            this.lblCaminoCritico3.Size = new System.Drawing.Size(70, 13);
+            this.lblCaminoCritico3.TabIndex = 45;
+            this.lblCaminoCritico3.Text = "Camino 3: A3";
             // 
             // inputProbabilidadCaminoCritico2
             // 
@@ -472,38 +486,47 @@
             this.lblCaminoCritico2.TabIndex = 42;
             this.lblCaminoCritico2.Text = "Camino 2: A2 -> A5";
             // 
-            // inputProbabilidadCaminoCritico3
+            // inputProbabilidadCaminoCritico1
             // 
-            this.inputProbabilidadCaminoCritico3.DecimalPlaces = 2;
-            this.inputProbabilidadCaminoCritico3.Enabled = false;
-            this.inputProbabilidadCaminoCritico3.Location = new System.Drawing.Point(80, 168);
-            this.inputProbabilidadCaminoCritico3.Name = "inputProbabilidadCaminoCritico3";
-            this.inputProbabilidadCaminoCritico3.Size = new System.Drawing.Size(120, 20);
-            this.inputProbabilidadCaminoCritico3.TabIndex = 47;
+            this.inputProbabilidadCaminoCritico1.DecimalPlaces = 2;
+            this.inputProbabilidadCaminoCritico1.Enabled = false;
+            this.inputProbabilidadCaminoCritico1.Location = new System.Drawing.Point(80, 53);
+            this.inputProbabilidadCaminoCritico1.Name = "inputProbabilidadCaminoCritico1";
+            this.inputProbabilidadCaminoCritico1.Size = new System.Drawing.Size(120, 20);
+            this.inputProbabilidadCaminoCritico1.TabIndex = 41;
             // 
-            // lblProbabilidadCaminoCritico3
+            // lblProbabilidadCaminoCritico1
             // 
-            this.lblProbabilidadCaminoCritico3.AutoSize = true;
-            this.lblProbabilidadCaminoCritico3.Location = new System.Drawing.Point(6, 170);
-            this.lblProbabilidadCaminoCritico3.Name = "lblProbabilidadCaminoCritico3";
-            this.lblProbabilidadCaminoCritico3.Size = new System.Drawing.Size(68, 13);
-            this.lblProbabilidadCaminoCritico3.TabIndex = 46;
-            this.lblProbabilidadCaminoCritico3.Text = "Probabilidad:";
+            this.lblProbabilidadCaminoCritico1.AutoSize = true;
+            this.lblProbabilidadCaminoCritico1.Location = new System.Drawing.Point(6, 55);
+            this.lblProbabilidadCaminoCritico1.Name = "lblProbabilidadCaminoCritico1";
+            this.lblProbabilidadCaminoCritico1.Size = new System.Drawing.Size(68, 13);
+            this.lblProbabilidadCaminoCritico1.TabIndex = 40;
+            this.lblProbabilidadCaminoCritico1.Text = "Probabilidad:";
             // 
-            // lblCaminoCritico3
+            // chartEvolucionPromedio
             // 
-            this.lblCaminoCritico3.AutoSize = true;
-            this.lblCaminoCritico3.Location = new System.Drawing.Point(6, 146);
-            this.lblCaminoCritico3.Name = "lblCaminoCritico3";
-            this.lblCaminoCritico3.Size = new System.Drawing.Size(70, 13);
-            this.lblCaminoCritico3.TabIndex = 45;
-            this.lblCaminoCritico3.Text = "Camino 3: A3";
+            chartArea1.Name = "ChartArea1";
+            this.chartEvolucionPromedio.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartEvolucionPromedio.Legends.Add(legend1);
+            this.chartEvolucionPromedio.Location = new System.Drawing.Point(230, 360);
+            this.chartEvolucionPromedio.Name = "chartEvolucionPromedio";
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.Legend = "Legend1";
+            series1.Name = "Promedio";
+            this.chartEvolucionPromedio.Series.Add(series1);
+            this.chartEvolucionPromedio.Size = new System.Drawing.Size(822, 288);
+            this.chartEvolucionPromedio.TabIndex = 41;
+            this.chartEvolucionPromedio.Text = "chart1";
             // 
             // FormTablero
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1379, 685);
+            this.Controls.Add(this.chartEvolucionPromedio);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvActividades);
             this.Controls.Add(this.btnBuscarPagina);
@@ -542,9 +565,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvActividades)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.inputProbabilidadCaminoCritico1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inputProbabilidadCaminoCritico2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.inputProbabilidadCaminoCritico3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inputProbabilidadCaminoCritico2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inputProbabilidadCaminoCritico1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartEvolucionPromedio)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -591,5 +615,6 @@
         private System.Windows.Forms.Label lblCaminoCritico2;
         private System.Windows.Forms.NumericUpDown inputProbabilidadCaminoCritico1;
         private System.Windows.Forms.Label lblProbabilidadCaminoCritico1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartEvolucionPromedio;
     }
 }

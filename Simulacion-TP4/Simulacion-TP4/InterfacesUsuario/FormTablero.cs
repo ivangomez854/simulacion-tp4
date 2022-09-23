@@ -224,6 +224,8 @@ namespace Simulacion_TP4.InterfacesUsuario
 
             var generador = this.getGeneradorRandom();
 
+            this.chartEvolucionPromedio.Series[0].Points.Clear();
+
             var vA1 = new GeneradorVAUniforme(generador, DEFAULT_A_T1, DEFAULT_B_T1);
             var vA2 = new GeneradorVAUniforme(generador, DEFAULT_A_T2, DEFAULT_B_T2);
             var vA3 = new GeneradorVAExponencialNegativa(generador, 1d/DEFAULT_MEDIA_T3);
@@ -234,7 +236,7 @@ namespace Simulacion_TP4.InterfacesUsuario
 
             this.controlador = new SimulacionMontecarloController(this.lista, vA1, vA2, vA3, vA4, vA5);
             
-            this.controlador.generarSimulacion((double)this.txtCantidad.Value, this.progressBar);
+            this.controlador.generarSimulacion((double)this.txtCantidad.Value, this.progressBar, this.chartEvolucionPromedio);
 
             this.inputProbabilidadCaminoCritico1.Value = (decimal) this.controlador.montecarloService.EstadoActual.ProbabilidadCaminoCritico1;
             this.inputProbabilidadCaminoCritico2.Value = (decimal) this.controlador.montecarloService.EstadoActual.ProbabilidadCaminoCritico2;
