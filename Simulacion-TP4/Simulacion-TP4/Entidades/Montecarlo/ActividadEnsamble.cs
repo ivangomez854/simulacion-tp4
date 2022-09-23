@@ -11,7 +11,14 @@ using System.Threading.Tasks;
 namespace Simulacion_TP4.Entidades.Montecarlo
 {
     internal class ActividadEnsamble
-    {   
+    {
+        public const String CAMINO_1 = "A1 -> A4 -> A5";
+        public const String CAMINO_2 = "A2 -> A5";
+        public const String CAMINO_3 = "A3";
+        public String CaminoCritico { get; }
+        public double ProbabilidadCaminoCritico1 { get; set; }
+        public double ProbabilidadCaminoCritico2 { get; set; }
+        public double ProbabilidadCaminoCritico3 { get; set; }
         public double Orden { get; set; }
         public Tarea T1 { get; }
         public Tarea T2 { get; }
@@ -46,12 +53,49 @@ namespace Simulacion_TP4.Entidades.Montecarlo
             T4 = t4;
             T5 = t5;
             TiempoTotal = T3 != null && T5 != null ? this.CalcularTiempoTotal() : 0;
+            CaminoCritico = T3 != null && T5 != null ? this.CalcularCaminoCritico() : "";
             PromedioAcumuladoTiempoTotal = CalcularPromedioAcumuladoTiempoTotal();
         }
 
         private double CalcularTiempoTotal()
         {
             return Math.Max(T3.DuracionTotalTarea(), T5.DuracionTotalTarea());
+        }
+
+        private String CalcularCaminoCritico()
+        {
+            // obtengo cuanto duro cada actividad
+            double tiempoActividad1 = T1.DuracionMinima;
+            double tiempoActividad2 = T2.DuracionMinima;
+            double tiempoActividad3 = T3.DuracionMinima;
+            double tiempoActividad4 = T4.DuracionMinima;
+            double tiempoActividad5 = T5.DuracionMinima;
+
+            // hay 3 caminos posibles:
+            // A1 -> A4 -> A5 -> FINAL
+            // A2 -> A5 -------> FINAL
+            // A3 -------------> FINAL
+            double tiempoCamino1 = tiempoActividad1 + tiempoActividad4 + tiempoActividad5;
+            double tiempoCamino2 = tiempoActividad2 + tiempoActividad5;
+            double tiempoCamino3 = tiempoActividad3;
+
+            // el camino que demora mas tiempo es el camino critico
+            double tiempoCaminoCritico = tiempoCamino1;
+            String caminoCritico = CAMINO_1;
+
+            if (tiempoCamino2 > tiempoCaminoCritico)
+            {
+                tiempoCaminoCritico = tiempoCamino2;
+                caminoCritico = CAMINO_2;
+            }
+
+            if (tiempoCamino3 > tiempoCaminoCritico)
+            {
+                tiempoCaminoCritico = tiempoCamino3;
+                caminoCritico = CAMINO_3;
+            }
+
+            return caminoCritico;
         }
 
         private double CalcularPromedioAcumuladoTiempoTotal()
