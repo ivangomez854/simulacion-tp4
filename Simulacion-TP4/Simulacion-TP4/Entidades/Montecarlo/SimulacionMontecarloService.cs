@@ -46,6 +46,7 @@ namespace Simulacion_TP4.Montecarlo
             EstadoActual.ProbabilidadCaminoCritico1 = 0;
             EstadoActual.ProbabilidadCaminoCritico2 = 0;
             EstadoActual.ProbabilidadCaminoCritico3 = 0;
+            EstadoActual.Varianza = 0;
 
             //Inicializo propiedades de sumarizacion
             TiempoMaximo = Double.MinValue;
@@ -83,6 +84,11 @@ namespace Simulacion_TP4.Montecarlo
             // Calculo los datos sumarizados del conjunto de actividades
             actividad.AcumuladoTiempoTotal = Math.Round(EstadoActual.AcumuladoTiempoTotal + actividad.TiempoTotal, 2);
             actividad.PromedioAcumuladoTiempoTotal = Math.Round(actividad.AcumuladoTiempoTotal / orden, 2);
+
+            if (orden > 1)
+            {
+                actividad.Varianza = ((orden - 2) * EstadoActual.Varianza + (orden / (orden - 1)) * Math.Pow(actividad.PromedioAcumuladoTiempoTotal - actividad.TiempoTotal, 2)) / (orden - 1);
+            }
 
             TiempoMaximo = actividad.TiempoTotal > TiempoMaximo ? actividad.TiempoTotal : TiempoMaximo;
             TiempoMinimo = actividad.TiempoTotal < TiempoMinimo ? actividad.TiempoTotal : TiempoMinimo;

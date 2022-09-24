@@ -47,6 +47,7 @@ namespace Simulacion_TP4.Entidades.Montecarlo
         public double AcumuladoTiempoTotal { get; set; }
 
         public double PromedioAcumuladoTiempoTotal { get; set; }
+        public double Varianza { get; set; }
 
 
         public ActividadEnsamble(double orden, Tarea t1, Tarea t2, Tarea t3, Tarea t4, Tarea t5)

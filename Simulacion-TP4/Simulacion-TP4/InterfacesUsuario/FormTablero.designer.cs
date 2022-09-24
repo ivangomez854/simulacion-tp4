@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTablero));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.gbRandom = new System.Windows.Forms.GroupBox();
             this.txtSemilla = new System.Windows.Forms.NumericUpDown();
             this.txtModulo = new System.Windows.Forms.NumericUpDown();
@@ -73,6 +73,8 @@
             this.inputProbabilidadCaminoCritico1 = new System.Windows.Forms.NumericUpDown();
             this.lblProbabilidadCaminoCritico1 = new System.Windows.Forms.Label();
             this.chartEvolucionPromedio = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.lblConfianza90 = new System.Windows.Forms.Label();
+            this.inputConfianza90 = new System.Windows.Forms.NumericUpDown();
             this.gbRandom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtSemilla)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtModulo)).BeginInit();
@@ -90,6 +92,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.inputProbabilidadCaminoCritico2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inputProbabilidadCaminoCritico1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartEvolucionPromedio)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inputConfianza90)).BeginInit();
             this.SuspendLayout();
             // 
             // gbRandom
@@ -506,26 +509,51 @@
             // 
             // chartEvolucionPromedio
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chartEvolucionPromedio.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartEvolucionPromedio.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.chartEvolucionPromedio.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartEvolucionPromedio.Legends.Add(legend2);
             this.chartEvolucionPromedio.Location = new System.Drawing.Point(230, 360);
             this.chartEvolucionPromedio.Name = "chartEvolucionPromedio";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series1.Legend = "Legend1";
-            series1.Name = "Promedio";
-            this.chartEvolucionPromedio.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series2.Legend = "Legend1";
+            series2.Name = "Promedio";
+            this.chartEvolucionPromedio.Series.Add(series2);
             this.chartEvolucionPromedio.Size = new System.Drawing.Size(822, 288);
             this.chartEvolucionPromedio.TabIndex = 41;
             this.chartEvolucionPromedio.Text = "chart1";
+            // 
+            // lblConfianza90
+            // 
+            this.lblConfianza90.AutoSize = true;
+            this.lblConfianza90.Location = new System.Drawing.Point(1065, 416);
+            this.lblConfianza90.Name = "lblConfianza90";
+            this.lblConfianza90.Size = new System.Drawing.Size(147, 13);
+            this.lblConfianza90.TabIndex = 42;
+            this.lblConfianza90.Text = "Fecha con confianza del 90%";
+            // 
+            // inputConfianza90
+            // 
+            this.inputConfianza90.DecimalPlaces = 2;
+            this.inputConfianza90.Enabled = false;
+            this.inputConfianza90.Location = new System.Drawing.Point(1068, 432);
+            this.inputConfianza90.Maximum = new decimal(new int[] {
+            100000000,
+            0,
+            0,
+            0});
+            this.inputConfianza90.Name = "inputConfianza90";
+            this.inputConfianza90.Size = new System.Drawing.Size(120, 20);
+            this.inputConfianza90.TabIndex = 43;
             // 
             // FormTablero
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1379, 685);
+            this.Controls.Add(this.inputConfianza90);
+            this.Controls.Add(this.lblConfianza90);
             this.Controls.Add(this.chartEvolucionPromedio);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvActividades);
@@ -569,6 +597,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.inputProbabilidadCaminoCritico2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.inputProbabilidadCaminoCritico1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartEvolucionPromedio)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inputConfianza90)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -616,5 +645,7 @@
         private System.Windows.Forms.NumericUpDown inputProbabilidadCaminoCritico1;
         private System.Windows.Forms.Label lblProbabilidadCaminoCritico1;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartEvolucionPromedio;
+        private System.Windows.Forms.Label lblConfianza90;
+        private System.Windows.Forms.NumericUpDown inputConfianza90;
     }
 }

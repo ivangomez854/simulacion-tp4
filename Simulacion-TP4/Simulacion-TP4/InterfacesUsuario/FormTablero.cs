@@ -238,6 +238,10 @@ namespace Simulacion_TP4.InterfacesUsuario
             
             this.controlador.generarSimulacion((double)this.txtCantidad.Value, this.progressBar, this.chartEvolucionPromedio);
 
+            double media = this.controlador.montecarloService.EstadoActual.PromedioAcumuladoTiempoTotal;
+            double varianza = Math.Sqrt(this.controlador.montecarloService.EstadoActual.Varianza);
+            this.inputConfianza90.Value = (decimal) Normal.InvCDF(media, varianza, 0.9d);
+
             this.inputProbabilidadCaminoCritico1.Value = (decimal) this.controlador.montecarloService.EstadoActual.ProbabilidadCaminoCritico1;
             this.inputProbabilidadCaminoCritico2.Value = (decimal) this.controlador.montecarloService.EstadoActual.ProbabilidadCaminoCritico2;
             this.inputProbabilidadCaminoCritico3.Value = (decimal) this.controlador.montecarloService.EstadoActual.ProbabilidadCaminoCritico3;
