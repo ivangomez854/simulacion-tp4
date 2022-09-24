@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTablero));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.gbRandom = new System.Windows.Forms.GroupBox();
             this.txtSemilla = new System.Windows.Forms.NumericUpDown();
             this.txtModulo = new System.Windows.Forms.NumericUpDown();
@@ -76,12 +76,12 @@
             this.lblConfianza90 = new System.Windows.Forms.Label();
             this.inputConfianza90 = new System.Windows.Forms.NumericUpDown();
             this.gbTiempos = new System.Windows.Forms.GroupBox();
-            this.lblMaximo = new System.Windows.Forms.Label();
-            this.inputMaximo = new System.Windows.Forms.NumericUpDown();
-            this.lblMinimo = new System.Windows.Forms.Label();
-            this.inputMinimo = new System.Windows.Forms.NumericUpDown();
             this.lblPromedio = new System.Windows.Forms.Label();
             this.inputPromedio = new System.Windows.Forms.NumericUpDown();
+            this.lblMinimo = new System.Windows.Forms.Label();
+            this.inputMinimo = new System.Windows.Forms.NumericUpDown();
+            this.lblMaximo = new System.Windows.Forms.Label();
+            this.inputMaximo = new System.Windows.Forms.NumericUpDown();
             this.gbRandom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtSemilla)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtModulo)).BeginInit();
@@ -101,9 +101,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.chartEvolucionPromedio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inputConfianza90)).BeginInit();
             this.gbTiempos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.inputMaximo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inputMinimo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inputPromedio)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inputMinimo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inputMaximo)).BeginInit();
             this.SuspendLayout();
             // 
             // gbRandom
@@ -267,7 +267,7 @@
             // 
             this.txtCantidad.Location = new System.Drawing.Point(16, 159);
             this.txtCantidad.Maximum = new decimal(new int[] {
-            10000000,
+            5000000,
             0,
             0,
             0});
@@ -448,7 +448,7 @@
             // 
             // inputProbabilidadCaminoCritico3
             // 
-            this.inputProbabilidadCaminoCritico3.DecimalPlaces = 2;
+            this.inputProbabilidadCaminoCritico3.DecimalPlaces = 4;
             this.inputProbabilidadCaminoCritico3.Enabled = false;
             this.inputProbabilidadCaminoCritico3.Location = new System.Drawing.Point(80, 168);
             this.inputProbabilidadCaminoCritico3.Name = "inputProbabilidadCaminoCritico3";
@@ -475,7 +475,7 @@
             // 
             // inputProbabilidadCaminoCritico2
             // 
-            this.inputProbabilidadCaminoCritico2.DecimalPlaces = 2;
+            this.inputProbabilidadCaminoCritico2.DecimalPlaces = 4;
             this.inputProbabilidadCaminoCritico2.Enabled = false;
             this.inputProbabilidadCaminoCritico2.Location = new System.Drawing.Point(80, 112);
             this.inputProbabilidadCaminoCritico2.Name = "inputProbabilidadCaminoCritico2";
@@ -502,7 +502,7 @@
             // 
             // inputProbabilidadCaminoCritico1
             // 
-            this.inputProbabilidadCaminoCritico1.DecimalPlaces = 2;
+            this.inputProbabilidadCaminoCritico1.DecimalPlaces = 4;
             this.inputProbabilidadCaminoCritico1.Enabled = false;
             this.inputProbabilidadCaminoCritico1.Location = new System.Drawing.Point(80, 53);
             this.inputProbabilidadCaminoCritico1.Name = "inputProbabilidadCaminoCritico1";
@@ -520,17 +520,17 @@
             // 
             // chartEvolucionPromedio
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chartEvolucionPromedio.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartEvolucionPromedio.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.chartEvolucionPromedio.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartEvolucionPromedio.Legends.Add(legend2);
             this.chartEvolucionPromedio.Location = new System.Drawing.Point(230, 360);
             this.chartEvolucionPromedio.Name = "chartEvolucionPromedio";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series1.Legend = "Legend1";
-            series1.Name = "Promedio";
-            this.chartEvolucionPromedio.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series2.Legend = "Legend1";
+            series2.Name = "Promedio";
+            this.chartEvolucionPromedio.Series.Add(series2);
             this.chartEvolucionPromedio.Size = new System.Drawing.Size(822, 288);
             this.chartEvolucionPromedio.TabIndex = 41;
             this.chartEvolucionPromedio.Text = "chart1";
@@ -575,28 +575,28 @@
             this.gbTiempos.TabStop = false;
             this.gbTiempos.Text = "Tiempos";
             // 
-            // lblMaximo
+            // lblPromedio
             // 
-            this.lblMaximo.AutoSize = true;
-            this.lblMaximo.Location = new System.Drawing.Point(6, 21);
-            this.lblMaximo.Name = "lblMaximo";
-            this.lblMaximo.Size = new System.Drawing.Size(43, 13);
-            this.lblMaximo.TabIndex = 44;
-            this.lblMaximo.Text = "Maximo";
+            this.lblPromedio.AutoSize = true;
+            this.lblPromedio.Location = new System.Drawing.Point(6, 99);
+            this.lblPromedio.Name = "lblPromedio";
+            this.lblPromedio.Size = new System.Drawing.Size(51, 13);
+            this.lblPromedio.TabIndex = 48;
+            this.lblPromedio.Text = "Promedio";
             // 
-            // inputMaximo
+            // inputPromedio
             // 
-            this.inputMaximo.DecimalPlaces = 2;
-            this.inputMaximo.Enabled = false;
-            this.inputMaximo.Location = new System.Drawing.Point(9, 37);
-            this.inputMaximo.Maximum = new decimal(new int[] {
+            this.inputPromedio.DecimalPlaces = 2;
+            this.inputPromedio.Enabled = false;
+            this.inputPromedio.Location = new System.Drawing.Point(9, 115);
+            this.inputPromedio.Maximum = new decimal(new int[] {
             100000000,
             0,
             0,
             0});
-            this.inputMaximo.Name = "inputMaximo";
-            this.inputMaximo.Size = new System.Drawing.Size(120, 20);
-            this.inputMaximo.TabIndex = 45;
+            this.inputPromedio.Name = "inputPromedio";
+            this.inputPromedio.Size = new System.Drawing.Size(120, 20);
+            this.inputPromedio.TabIndex = 49;
             // 
             // lblMinimo
             // 
@@ -621,28 +621,28 @@
             this.inputMinimo.Size = new System.Drawing.Size(120, 20);
             this.inputMinimo.TabIndex = 47;
             // 
-            // lblPromedio
+            // lblMaximo
             // 
-            this.lblPromedio.AutoSize = true;
-            this.lblPromedio.Location = new System.Drawing.Point(6, 99);
-            this.lblPromedio.Name = "lblPromedio";
-            this.lblPromedio.Size = new System.Drawing.Size(51, 13);
-            this.lblPromedio.TabIndex = 48;
-            this.lblPromedio.Text = "Promedio";
+            this.lblMaximo.AutoSize = true;
+            this.lblMaximo.Location = new System.Drawing.Point(6, 21);
+            this.lblMaximo.Name = "lblMaximo";
+            this.lblMaximo.Size = new System.Drawing.Size(43, 13);
+            this.lblMaximo.TabIndex = 44;
+            this.lblMaximo.Text = "Maximo";
             // 
-            // inputPromedio
+            // inputMaximo
             // 
-            this.inputPromedio.DecimalPlaces = 2;
-            this.inputPromedio.Enabled = false;
-            this.inputPromedio.Location = new System.Drawing.Point(9, 115);
-            this.inputPromedio.Maximum = new decimal(new int[] {
+            this.inputMaximo.DecimalPlaces = 2;
+            this.inputMaximo.Enabled = false;
+            this.inputMaximo.Location = new System.Drawing.Point(9, 37);
+            this.inputMaximo.Maximum = new decimal(new int[] {
             100000000,
             0,
             0,
             0});
-            this.inputPromedio.Name = "inputPromedio";
-            this.inputPromedio.Size = new System.Drawing.Size(120, 20);
-            this.inputPromedio.TabIndex = 49;
+            this.inputMaximo.Name = "inputMaximo";
+            this.inputMaximo.Size = new System.Drawing.Size(120, 20);
+            this.inputMaximo.TabIndex = 45;
             // 
             // FormTablero
             // 
@@ -696,9 +696,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.inputConfianza90)).EndInit();
             this.gbTiempos.ResumeLayout(false);
             this.gbTiempos.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.inputMaximo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inputMinimo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.inputPromedio)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inputMinimo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inputMaximo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

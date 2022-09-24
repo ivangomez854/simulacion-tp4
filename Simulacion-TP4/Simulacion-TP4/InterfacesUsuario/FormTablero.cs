@@ -81,7 +81,8 @@ namespace Simulacion_TP4.InterfacesUsuario
         private void inicializarComponentes()
         {
             this.dgvSimulacion.AutoGenerateColumns = false;
-            Reiniciar();
+            this.cargarCombos();
+            this.btnReiniciar.Enabled = false;
         }
 
         private void inicializarGrillaActividades()
@@ -193,33 +194,25 @@ namespace Simulacion_TP4.InterfacesUsuario
 
         private void Reiniciar()
         {
-            txtA.Value = DEFAULT_CONSTANTE_MULTIPLICATIVA;
-            txtC.Value = DEFAULT_CONSTANTE_INDEPENDIENTE;
-            txtModulo.Value = DEFAULT_MODULO;
-            txtSemilla.Value = DEFAULT_SEMILLA;
 
-            this.cargarCombos();
-            this.HabilitarDeshabilitarControlesRandom(true);
         }
 
-        private void HabilitarDeshabilitarControlesRandom(bool habilitar)
+        private bool validarControlesRandom()
         {
-            txtA.Value = 0;
-            txtA.Enabled = habilitar;
-
-            txtC.Value = 0;
-            txtC.Enabled = habilitar;
-
-            txtModulo.Value = 0;
-            txtModulo.Enabled = habilitar;
-
-            txtSemilla.Value = 0;
-            txtSemilla.Enabled = habilitar;
+            if((int)cboMetodoRandom.SelectedValue < 3)
+            return (txtA.Value != 0 && txtModulo.Value != 0);
+            return true;
         }
 
 
         private void btnGenerar_Click(object sender, EventArgs e)
         {
+            if (!validarControlesRandom())
+            {
+                MessageBox.Show("Parametros de generador de randoms incorrectos");
+                return;
+            }
+            
             this.reiniciar();
 
             var generador = this.getGeneradorRandom();
@@ -254,10 +247,6 @@ namespace Simulacion_TP4.InterfacesUsuario
             this.inputProbabilidadCaminoCritico3.Value = (decimal) this.controlador.montecarloService.EstadoActual.ProbabilidadCaminoCritico3;
 
             this.paginador = new Paginador(this.lista, 20);
-            Console.WriteLine("TIEMPO MAXIMO: " + controlador.ObtenerTiempoMaximo());
-            Console.WriteLine("TIEMPO MINIMO: " + controlador.ObtenerTiempoMinimo());
-            Console.WriteLine("PROMEDIO ENSAMBLE: " + controlador.ObtenerPromedioEnsamble());
-            Console.WriteLine("PROBABILIDAD ANTES 45 DIAS: " + controlador.ObtenerProbabilidadAntes45Dias());
 
             this.dgvSimulacion.DataSource = this.paginador.ObtenerPrimerPagina();
             this.dgvSimulacion.FirstDisplayedScrollingRowIndex = this.dgvSimulacion.Rows.Count - 1;
@@ -314,45 +303,59 @@ namespace Simulacion_TP4.InterfacesUsuario
 
         private void btnPrimeraPagina_Click(object sender, EventArgs e)
         {
-            this.dgvSimulacion.DataSource = this.paginador.ObtenerPrimerPagina();
-            this.dgvSimulacion.FirstDisplayedScrollingRowIndex = 0;
+            if (this.paginador != null)
+            {
+                this.dgvSimulacion.DataSource = this.paginador.ObtenerPrimerPagina();
+                this.dgvSimulacion.FirstDisplayedScrollingRowIndex = 0;
+            }
         }
 
         private void btnPaginaAnterior_Click(object sender, EventArgs e)
         {
-            BindingList<ActividadEnsamble> aux = this.paginador.ObtenerPaginaAnterior();
+            if (this.paginador != null)
+            {
+                BindingList<ActividadEnsamble> aux = this.paginador.ObtenerPaginaAnterior();
 
-            this.dgvSimulacion.DataSource = aux is null ? this.dgvSimulacion.DataSource : aux;
-            this.dgvSimulacion.FirstDisplayedScrollingRowIndex = 0;
+                this.dgvSimulacion.DataSource = aux is null ? this.dgvSimulacion.DataSource : aux;
+                this.dgvSimulacion.FirstDisplayedScrollingRowIndex = 0;
+            }
         }
 
         private void btnPaginaSiguiente_Click(object sender, EventArgs e)
         {
-            BindingList<ActividadEnsamble> aux = this.paginador.ObtenerPaginaSiguiente();
+            if (this.paginador != null)
+            {
+                BindingList<ActividadEnsamble> aux = this.paginador.ObtenerPaginaSiguiente();
 
-            this.dgvSimulacion.DataSource = aux is null ? this.dgvSimulacion.DataSource : aux;
-            this.dgvSimulacion.FirstDisplayedScrollingRowIndex = 0;
+                this.dgvSimulacion.DataSource = aux is null ? this.dgvSimulacion.DataSource : aux;
+                this.dgvSimulacion.FirstDisplayedScrollingRowIndex = 0;
+            }
         }
 
         private void btnUltimaPagina_Click(object sender, EventArgs e)
         {
-            this.dgvSimulacion.DataSource = this.paginador.ObtenerUltimaPagina();
-            this.dgvSimulacion.FirstDisplayedScrollingRowIndex = 0;
+            if (this.paginador != null)
+            {
+                this.dgvSimulacion.DataSource = this.paginador.ObtenerUltimaPagina();
+                this.dgvSimulacion.FirstDisplayedScrollingRowIndex = 0;
+            }
         }
 
         private void btnBuscarPagina_Click(object sender, EventArgs e)
         {
-            BindingList<ActividadEnsamble> aux = this.paginador.BuscarPaginaXIndice(Convert.ToInt32(txtBuscarPagina.Value.ToString()) - 1);
-
-            if (aux is null)
+            if (this.paginador != null)
             {
-                MessageBox.Show("Fuera de rango. Total items: " + this.lista.Count);
-                return;
+                BindingList<ActividadEnsamble> aux = this.paginador.BuscarPaginaXIndice(Convert.ToInt32(txtBuscarPagina.Value.ToString()) - 1);
+
+                if (aux is null)
+                {
+                    MessageBox.Show("Fuera de rango. Total items: " + this.lista.Count);
+                    return;
+                }
+
+                this.dgvSimulacion.DataSource = aux;
+                this.dgvSimulacion.FirstDisplayedScrollingRowIndex = 0;
             }
-
-            this.dgvSimulacion.DataSource = aux;
-            this.dgvSimulacion.FirstDisplayedScrollingRowIndex = 0;
-
         }
     }
 }
