@@ -238,6 +238,13 @@ namespace Simulacion_TP4.InterfacesUsuario
             
             this.controlador.generarSimulacion((double)this.txtCantidad.Value, this.progressBar, this.chartEvolucionPromedio);
 
+            double maximo = this.controlador.montecarloService.TiempoMaximo;
+            double minimo = this.controlador.montecarloService.TiempoMinimo;
+            double promedio = this.controlador.montecarloService.TiempoPromedioActividades;
+            this.inputMaximo.Value = (decimal) maximo;
+            this.inputMinimo.Value = (decimal) minimo;
+            this.inputPromedio.Value = (decimal) promedio;
+
             double media = this.controlador.montecarloService.EstadoActual.PromedioAcumuladoTiempoTotal;
             double varianza = Math.Sqrt(this.controlador.montecarloService.EstadoActual.Varianza);
             this.inputConfianza90.Value = (decimal) Normal.InvCDF(media, varianza, 0.9d);
