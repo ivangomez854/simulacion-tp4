@@ -71,12 +71,12 @@ namespace Simulacion_TP4.Montecarlo
             var tarea4 = new Tarea(tiempo4, tarea1);
 
             Tarea tarea5;
-            if (tiempo4.ValorAleatorio > tiempo2.ValorAleatorio)
+            if (tiempo4.ValorAleatorio + tiempo1.ValorAleatorio > tiempo2.ValorAleatorio)
             {
                 tarea5 = new Tarea(tiempo5, tarea4);
             } else
             {
-                tarea5 = new Tarea(tiempo5, tarea4);
+                tarea5 = new Tarea(tiempo5, tarea2);
             }
 
             // Creo la nueva actividad con su respectivo numero de orden
